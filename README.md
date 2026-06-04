@@ -3,24 +3,24 @@
 
 ## 📦 Компиляция
 
-```
+```bash
 cl /EHsc /std:c++20 main.cpp Construction.cpp Util.cpp
 ```
 
 ## 🚀 Запуск
 
-```
+```bash
 main.exe
 ```
 
 ## ✨ Особенности
 
 - Стандарт C++20
-- Обработка исключений включена (`/EHsc`)
+- Обработка исключений (`/EHsc`)
 - Компилятор MSVC
 
 ## 🛠️ Требования
 
 - Visual Studio (компилятор MSVC)
 - ОС Windows
----
+```
