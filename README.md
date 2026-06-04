@@ -9,7 +9,7 @@ cl /EHsc /std:c++20 main.cpp Construction.cpp Util.cpp
 
 ## 🚀 Запуск
 
-```bash
+```
 main.exe
 ```
 
