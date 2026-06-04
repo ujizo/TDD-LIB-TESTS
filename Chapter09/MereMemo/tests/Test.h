@@ -5,6 +5,7 @@
 #include <ostream>
 #include <string_view>
 #include <vector>
+#include <string>
 
 namespace MereTDD
 {
@@ -201,7 +202,7 @@ inline std::map<std::string, std::vector<TestSuite *>> & getTestSuites ()
 inline void addTest (std::string_view suiteName, Test * test)
 {
     std::string name(suiteName);
-    if (not getTests().contains(name))
+    if (!getTests().contains(name))
     {
         getTests().try_emplace(name, std::vector<Test *>());
     }
@@ -211,7 +212,7 @@ inline void addTest (std::string_view suiteName, Test * test)
 inline void addTestSuite (std::string_view suiteName, TestSuite * suite)
 {
     std::string name(suiteName);
-    if (not getTestSuites().contains(name))
+    if (!getTestSuites().contains(name))
     {
         getTestSuites().try_emplace(name, std::vector<TestSuite *>());
     }
@@ -373,7 +374,7 @@ inline void runTest (std::ostream & output, Test * test,
 
     if (test->passed())
     {
-        if (not test->expectedReason().empty())
+        if (!test->expectedReason().empty())
         {
             // This test passed but it was supposed
             // to have failed.
@@ -389,7 +390,7 @@ inline void runTest (std::ostream & output, Test * test,
                 << std::endl;
         }
     }
-    else if (not test->expectedReason().empty() &&
+    else if (!test->expectedReason().empty() &&
         test->expectedReason() == test->reason())
     {
         ++numPassed;
@@ -501,9 +502,9 @@ inline int runTests (std::ostream & output)
             << suiteDisplayName
             << std::endl;
 
-        if (not key.empty())
+        if (!key.empty())
         {
-            if (not getTestSuites().contains(key))
+            if (!getTestSuites().contains(key))
             {
                 output << "Test suite is not found."
                     << " Exiting test application."
@@ -511,7 +512,7 @@ inline int runTests (std::ostream & output)
                 return ++numFailed;
             }
 
-            if (not runSuite(output, true, key,
+            if (!runSuite(output, true, key,
                 numPassed, numFailed))
             {
                 output << "Test suite setup failed."
@@ -527,9 +528,9 @@ inline int runTests (std::ostream & output)
                 numPassed, numFailed, numMissedFailed);
         }
 
-        if (not key.empty())
+        if (!key.empty())
         {
-            if (not runSuite(output, false, key,
+            if (!runSuite(output, false, key,
                 numPassed, numFailed))
             {
                 output << "Test suite teardown failed."

@@ -1,8 +1,6 @@
-#include "../Log.h"
-
+#include "Log.h"
 #include "Util.h"
-
-#include <MereTDD/Test.h>
+#include "Test.h"
 
 TEST("Simple message can be logged")
 {

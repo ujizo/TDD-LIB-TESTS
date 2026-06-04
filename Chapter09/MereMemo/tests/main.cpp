@@ -1,4 +1,5 @@
-#include <MereTDD/Test.h>
+#include "Test.h"
+
 
 #include <iostream>
 

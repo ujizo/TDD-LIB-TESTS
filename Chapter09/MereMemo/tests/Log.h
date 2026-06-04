@@ -16,7 +16,7 @@ inline std::fstream log ()
 {
     auto const now = std::chrono::system_clock::now();
     std::time_t const tmNow = std::chrono::system_clock::to_time_t(now);
-    auto const ms = duration_cast<std::chrono::milliseconds>(
+    auto const ms = std::chrono::duration_cast<std::chrono::milliseconds>(  // ← ИСПРАВЛЕНО
         now.time_since_epoch()) % 1000;
 
     std::fstream logFile("application.log", std::ios::app);
