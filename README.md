@@ -3,7 +3,7 @@
 
 ## 📦 Компиляция
 
-```bash
+```
 cl /EHsc /std:c++20 main.cpp Construction.cpp Util.cpp
 ```
 
@@ -23,4 +23,4 @@ main.exe
 
 - Visual Studio (компилятор MSVC)
 - ОС Windows
-```
+---
